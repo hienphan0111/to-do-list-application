@@ -1,14 +1,17 @@
-import * as base from './module/base.js';
-import './style.css';
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import './index.css';
+import TodoApp from 'components/todoApp/todoapp.component';
+import reportWebVitals from './reportWebVitals';
 
-const inputBtn = document.querySelector('.list-btn');
-const inputData = document.querySelector('.list-input');
-const appList = document.querySelector('.main-body-ul');
-const clearBtn = document.querySelector('.clear-btn');
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+  <React.StrictMode>
+    <TodoApp />
+  </React.StrictMode>,
+);
 
-base.createDataByEnter(inputData, appList, inputData);
-base.createData(inputData, appList, inputBtn);
-base.removeData(appList);
-base.modifyData(appList);
-base.loadData(appList);
-base.registerClearBtnListener(clearBtn);
+// If you want to start measuring performance in your app, pass a function
+// to log results (for example: reportWebVitals(console.log))
+// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+reportWebVitals();
